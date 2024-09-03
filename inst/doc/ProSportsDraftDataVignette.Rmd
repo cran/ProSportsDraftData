@@ -1,0 +1,293 @@
+---
+title: "ProSportsDraftDataVignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ProSportsDraftDataVignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+## How to run and install the packages:
+`devtools::install_github("Ginsburg1/ProSportsDraftData")`
+
+`library(ProSportsDraftData)`
+
+## Nescessities 
+
+- **R** (Version 3.5 or greater)
+
+
+## Overview of the project
+
+The purpose of the project is to have an R package that contains scouting report data for players in the NHL, MLB, and NFL. Each league has data from multiple sources that can be easily accessed and analysed. This document lays out the different variables that each dataset contains as well as pre built funtions that only show data from each source
+
+
+## Available Datasets
+
+The `ProSportsDraftData` package provides several data sets:
+
+- **nfl_data**: NFL draft data
+- **nhl_data**: NHL draft data
+- **nba_data**: NBA draft data
+
+## Sources and Citations
+
+- **Base**: Base was used to establish a standard naming convention for players, avoiding confusion caused by nicknames or different variations of names among different sources. 
+  - **NFL**: https://www.espn.com/nfl/draft/rounds/_/round/
+  - **NBA**: https://www.espn.com/nba/draft/rounds/_/round/
+  - **NHL**: http://www.mynhldraft.com/
+  
+- **The Ringer**:
+  - **NBA**: https://nbadraft.theringer.com/
+  - **NFL**: https://nfldraft.theringer.com/
+  
+- **ESPN**:
+  - **NFL**: https://www.espn.com/nfl/draft/rounds/_/round/
+  - **NBA**: https://www.espn.com/nba/draft/rounds/_/round/
+  - **NHL**: https://www.espn.com/nhl
+  
+- **NBA.com**:
+  - **NBA**: https://www.nba.com/draft/
+  
+- **NBADraft.net**:
+  - **NBA**: https://www.nbadraft.net/players/
+  
+- **NBA.com**:
+  - **NHL**: https://www.nhl.com/news/
+  
+- **walterfootball.com**:
+  - **NFL**: https://walterfootball.com/
+  
+- **NFL.com**: 
+  - **NFL**: https://www.nfl.com/prospects/participants/all/
+
+
+## The `nfl` Dataset
+
+### Loading NFL Data
+
+To view the NFL dataset run the following code: 
+
+`nfl_data`
+
+### The data points
+
+The `nfl` data set includes the following data points:
+
+- **source**: The source of the data.
+- **name**: The name of the player.
+- **year**: The year of the draft.
+- **rank**: The rank of the player.
+- **round**: The round in which the player was drafted.
+- **height**: The height of the player.
+- **weight**: The weight of the player.
+- **position**: The position of the player.
+- **college**: The college the player attended.
+- **pros**: The pros of the player’s abilities.
+- **cons**: The cons of the player’s abilities.
+- **similar_player**: A similar player for comparison.
+- **similar_player_bio**: Similar player comparison.
+- **summary**: A summary of the player’s abilities.
+- **arm_length**: The arm length of the player.
+- **hand_length**: The hand length of the player.
+- **next_gen_production_score**: The Next Gen production score.
+- **next_gen_athleticism_score**: The Next Gen athleticism score.
+- **forty_yard_dash**: The forty-yard dash time.
+- **vertical_jump**: The vertical jump height.
+- **nfl_prospect_grade**: The NFL prospect grade.
+- **home_town**: The hometown of the player.
+- **broad_jump**: The broad jump distance.
+- **three_cone_drill**: The three-cone drill time.
+- **twenty_yard_shuttle**: The twenty-yard shuttle time.
+- **bench_press**: The bench press reps.
+- **college_abbrivation**: The abbreviation of the college.
+- **pre_draft**: Pre-draft information.
+- **post_draft**: Post-draft information.
+- **position_rank**: The position rank of the player.
+- **overall_rank**: The overall rank of the player.
+- **grade**: The grade of the player.
+- **school**: The school the player attended.
+- **yds**: Yards the player ran.
+- **ypa**: The yards per attempt.
+- **ypr**: The yards per reception.
+- **tds**: Number of touchdowns the player performed.
+- **ints**: The interceptions.
+- **rtg**: The rating of the player.
+- **tkls**: The number of tackles of the player.
+- **tfl**: The tackles for loss.
+- **ypc**: The yards per carry.
+- **pbu**: The pass break-ups of the player.
+- **twenty_plus**: Plays of twenty or more yards.
+- **sacks**: Number of sacks of the player.
+- **gms**: The number of games played.
+- **strts**: The number of games started.
+- **sk_all**: The number of sacks allowed.
+- **age**: The age of the player.
+- **main_selling_point**: The main selling point of the player.
+- **description**: The description of the player.
+- **scouting_report**: The scouting report.
+- **score**: Player’s score from 1-100.
+
+
+
+### Filtering By Data Source  
+
+The NFL data has been compiled from multiple sources. The four different data sets are:
+
+- **Base (ESPN.com)**: Data from ESPN.com 
+- **The Ringer**: Data from The Ringer 
+- **ESPN**: Data from ESPN 
+- **Walter Football**: Data from Walter Football  
+
+To see the data from a specific source, use the following functions:  
+
+- **Base (ESPN.com)**: `nfl_data_base()` 
+- **The Ringer**: `nfl_data_the_ringer()` 
+- **ESPN**: `nfl_data_espn()` 
+- **Walter Football**: `nfl_data_walter_football()`
+
+## The `nhl_data` Dataset
+
+### Loading NHL Data
+
+To view the NHL dataset run the following code: `nhl_data`
+
+
+### The data points
+
+The `NFL` data set includes the following data points:
+
+- **source**: The source of the data.
+- **name**: The name of the player.
+- **year**: The year of the draft.
+- **rank**: The rank of the player.
+- **round**: The round in which the player was drafted.
+- **date_of_birth**: The date of birth of the player.
+- **age**: The age of the player.
+- **current_team**: The current team of the player.
+- **league**: The league in which the player plays.
+- **scouting_report**: The scouting report of the player.
+- **team_fit**: The fit of the player within the team.
+- **likely_to_play**: The likelihood of the player to play in the NHL.
+- **position**: The position of the player.
+- **city**: The city associated with the player.
+- **team**: The team of the player.
+- **analysis**: An analysis of the player’s abilities.
+
+
+
+### Filtering By Data Source
+
+The NHL data has been compiled from multiple sources. The three different data sets are
+
+- **Base (ESPN.com)**: Data from ESPN.com
+- **ESPN**: Data from ESPN
+- **NHL.com**: Data from NHL.com
+
+To see the data from a specific source, use of the following functions:
+
+- **Base (ESPN.com)**:`nhl_base_data()`
+- **ESPN**:`nhl_data_espn()`
+- **NHL.com**:`nhl_data_nhl.com()`
+
+
+
+## The `nba_data` Dataset
+
+### Loading NHL Data
+
+To view the NHL dataset run the following code: `nba_data`
+
+### The data points
+
+The `nba_data` data set includes the following data points:
+
+- **source**: The source of the data.
+- **name**: The name of the player.
+- **year**: The year of the draft.
+- **rank**: The rank of the player.
+- **round**: The round in which the player was drafted.
+- **height**: The height of the player.
+- **weight**: The weight of the player.
+- **school**: The school the player attended.
+- **college_abbreviation**: The abbreviation of the college.
+- **pros**: The pros of the player’s abilities.
+- **cons**: The cons of the player’s abilities.
+- **verdict**: The verdict on the player's potential.
+- **pre_draft_analysis**: Pre-draft analysis of the player.
+- **post_draft_analysis**: Post-draft analysis of the player.
+- **ranking**: The player's ranking.
+- **player_score**: The player's score.
+- **position**: The position of the player.
+- **grade**: The grade of the player.
+- **pts_total**: Total points scored by the player.
+- **pts_per40**: Points scored per 40 minutes.
+- **reb_total**: Total rebounds by the player.
+- **reb_per40**: Rebounds per 40 minutes.
+- **ast_total**: Total assists by the player.
+- **ast_per40**: Assists per 40 minutes.
+- **efg**: Effective field goal percentage.
+- **fga**: Field goals attempted.
+- **stl_total**: Total steals by the player.
+- **stl_per40**: Steals per 40 minutes.
+- **blk_total**: Total blocks by the player.
+- **blk_per40**: Blocks per 40 minutes.
+- **tpt**: Three-point shots made.
+- **tpa**: Three-point shots attempted.
+- **ft**: Free throws made.
+- **fta**: Free throws attempted.
+- **ts**: True shooting percentage.
+- **ts_att**: True shooting attempts.
+- **main_selling_point**: The main selling point of the player.
+- **age**: The age of the player.
+- **wingspan**: The wingspan of the player.
+- **standing_reach**: The standing reach of the player.
+- **similar_player**: A similar player for comparison.
+- **profile**: The profile of the player.
+- **analysis**: An analysis of the player’s abilities.
+- **projection**: The projection of the player's future performance.
+- **date_of_birth**: The date of birth of the player.
+- **hometown**: The hometown of the player.
+- **high_school**: The high school the player attended.
+- **rebounding**: The rebounding ability of the player.
+- **potential**: The potential of the player.
+- **post_skills**: The post skills of the player.
+- **intangibles**: The intangibles of the player.
+- **international_team**: The international team of the player.
+- **athleticism**: The athleticism of the player.
+- **size**: The size of the player.
+- **defense**: The defensive skills of the player.
+- **strength**: The strength of the player.
+- **quickness**: The quickness of the player.
+- **leadership**: The leadership qualities of the player.
+- **jumpshot**: The jump shot ability of the player.
+- **nba_ready**: The NBA readiness of the player.
+- **mock_draft_rank**: The player's mock draft rank.
+- **big_board_rank**: The player's big board rank.
+- **overall_rank**: The overall rank of the player.
+
+### Filtering By Data Source
+
+The NFL data has been compiled from multiple sources. The five different data sets are:
+
+- **Base (ESPN.com)**: Data from ESPN.com
+- **NBA.com**: Data from NBA.com
+- **NBADraft.net**: Data from NBADraft.net
+- **The Ringer**: Data from The Ringer
+- **ESPN**: Data from ESPN
+
+To see the data from a specific source, use the following functions:
+
+- **Base (ESPN.com)**: `nba_data_base()`
+- **NBA.com**: `nba_data_nba_com()`
+- **NBADraft.net**: `nba_data_nbadraft_net()`
+- **The Ringer**: `nba_data_the_ringer()`
+- **ESPN**: `nba_data_espn()`
